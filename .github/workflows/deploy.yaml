@@ -30,6 +30,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/"$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')"/webinar:${{ github.sha }}
+          tags: ghcr.io/$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')/webinar:${{ github.sha }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
