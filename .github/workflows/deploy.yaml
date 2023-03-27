@@ -21,7 +21,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: andygol
+          username: Andygol
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
         id: docker_build
@@ -30,6 +30,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/andygol/webinar:${{ github.sha }}
+          tags: ghcr.io/Andygol/webinar:${{ github.sha }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
